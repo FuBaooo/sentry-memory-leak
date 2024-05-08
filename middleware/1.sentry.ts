@@ -5,9 +5,9 @@ export default fromNodeMiddleware((req, res, next) => {
   sentryTracingMiddleware(req, res, next)
 
   // handle memory leak
-  res.on('finish', () => {
-    setImmediate(() => {
-      Sentry.getCurrentScope()?.clear()
-    })
-  })
+  // res.on('finish', () => {
+  //   setImmediate(() => {
+  //     Sentry.getCurrentScope()?.clear()
+  //   })
+  // })
 })
